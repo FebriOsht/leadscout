@@ -19,6 +19,23 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+## Command line
+
+```bash
+pip install ddgs
+python cli.py --roles "software house, IT consultant" --industries "technology" --location "Jakarta" --out prospects.csv
+```
+
+| Option | Meaning |
+|---|---|
+| `--roles` | comma-separated roles or keywords (required) |
+| `--industries` | comma-separated industry keywords (required; the first one is used in each search) |
+| `--location` | optional location |
+| `--source` | `web` (default) or `linkedin` |
+| `--max` | maximum results per keyword, 1 to 50 (default 10) |
+| `--campaign` | campaign name stored with each result |
+| `--out` | save the results as CSV; without it, results are printed to the terminal |
+
 ## Responsible use
 
 Use it for publicly available company information only, respect the terms and rate limits of the search services involved, and follow data protection laws such as Indonesia's Personal Data Protection Law (UU PDP) or the GDPR when you store any personal data.

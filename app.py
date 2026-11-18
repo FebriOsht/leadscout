@@ -110,36 +110,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# DuckDuckGo Scraping Function (API)
-def duckduckgo_search_api(query, max_results=15, target_type='linkedin', log_func=None):
-    results = []
-    try:
-        ddgs = DDGS()
-        search_results = ddgs.text(query, max_results=max_results)
-        
-        if not search_results:
-            if log_func: log_func("<span style='color:#f87171;'>[!] DDG API returned 0 results (Backend Limit Hit).</span>")
-            return []
-
-        for r in search_results:
-            href = r.get('href', '')
-            title = r.get('title', '')
-            
-            if target_type == 'linkedin':
-                # Strictly filter for LinkedIn Profiles only
-                if 'linkedin.com/in/' in href and '/dir/' not in href and '/jobs/' not in href:
-                    clean_url = href.split('?')[0] 
-                    if clean_url not in [x['url'] for x in results]:
-                        results.append({'title': title, 'url': clean_url})
-            else:
-                # Entire Web mode: accept all relevant URLs
-                if href not in [x['url'] for x in results]:
-                    results.append({'title': title, 'url': href})
-                    
-        return results
-    except Exception as e:
-        if log_func: log_func(f"<span style='color:#f87171;'>[!] Internal DDG API error: {str(e)}</span>")
-        return []
+# DuckDuckGo search (shared with cli.py, see leadscout_core.py)
+from leadscout_core import duckduckgo_search_api
 
 # --- MODERN HEADER DESIGN ---
 st.markdown("""
