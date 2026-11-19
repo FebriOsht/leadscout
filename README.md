@@ -12,7 +12,7 @@ Research B2B prospects from public search results.
 
 ## Run it yourself
 
-````bash
+```bash
 git clone https://github.com/FebriOsht/leadscout.git
 cd leadscout
 pip install -r requirements.txt
