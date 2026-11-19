@@ -14,7 +14,7 @@ except ImportError:
 # Web Page Configuration
 st.set_page_config(
     page_title="LeadScout Pro | B2B Extractor",
-    page_icon="🎯",
+    page_icon="https://cdn.jsdelivr.net/npm/@vulpfest/icons@0.3/svg/vulpfest-mark-night.svg",
     layout="wide",
     initial_sidebar_state="expanded"
 )
