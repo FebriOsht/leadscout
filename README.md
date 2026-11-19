@@ -7,6 +7,7 @@
     </picture>
   </a>
 </p>
+
 # LeadScout
 
 Research B2B prospects from public search results.
